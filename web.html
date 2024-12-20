@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #333;
+      margin: 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to right, #6A11CB, #2575FC);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 1s ease-out;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      animation: slideIn 1s ease-out;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      opacity: 0.8;
+      animation: fadeIn 1.5s ease-out;
+    }
+    .btn {
+      padding: 12px 30px;
+      background: #fff;
+      color: #6A11CB;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+    .btn:hover {
+      background: #2575FC;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Features Section */
+    .features {
+      display: flex;
+      justify-content: space-around;
+      padding: 60px 20px;
+      background: #f9f9f9;
+      animation: fadeInUp 1s ease-out;
+    }
+    .feature {
+      text-align: center;
+      max-width: 300px;
+      animation: fadeInUp 1s ease-out;
+    }
+    .feature h3 {
+      color: #6A11CB;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .feature p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* About Us Section */
+    .about-us {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeInUp 1.2s ease-out;
+    }
+    .about-us h2 {
+      color: #2575FC;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .about-us p {
+      color: #666;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeInUp 1.2s ease-out;
+    }
+    .testimonials h2 {
+      color: #2575FC;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+    .testimonial {
+      font-style: italic;
+      font-size: 1.2rem;
+      margin: 30px 0;
+      color: #555;
+      transition: all 0.3s ease-in-out;
+    }
+    .testimonial:hover {
+      transform: scale(1.05);
+      color: #6A11CB;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    /* FAQ Section */
+    .faq {
+      padding: 60px 20px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    .faq h2 {
+      color: #2575FC;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .faq p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+    .faq .question {
+      font-weight: bold;
+      color: #6A11CB;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+    .faq .answer {
+      display: none;
+      margin-top: 10px;
+      color: #666;
+      font-size: 1rem;
+    }
+    .faq .question:hover {
+      text-decoration: underline;
+    }
+
+    /* Form Section */
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 40px auto;
+      text-align: center;
+      animation: fadeInUp 1.4s ease-out;
+    }
+    form h2 {
+      color: #2575FC;
+      margin-bottom: 20px;
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    input[type="submit"] {
+      background: #2575FC;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s ease-in-out;
+    }
+    input[type="submit"]:hover {
+      background: #6A11CB;
+      transform: scale(1.05);
+    }
+
+    /* Footer Section */
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .social-icons a {
+      color: white;
+      font-size: 0.7rem;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      color: #2575FC;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Welcome to Our App</h1>
+    <p>Discover the best way to manage your tasks and boost productivity.</p>
+    <button class="btn">Get Started</button>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features">
+    <div class="feature">
+      <h3>Easy to Use</h3>
+      <p>Simple interface that anyone can get used to within minutes.</p>
+    </div>
+    <div class="feature">
+      <h3>Manage Tasks</h3>
+      <p>Keep track of your tasks and complete them on time.</p>
+    </div>
+    <div class="feature">
+      <h3>Track Progress</h3>
+      <p>Stay updated with your progress and reach your goals.</p>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="about-us">
+    <h2>About Us</h2>
+    <p>We are a passionate team dedicated to helping individuals stay organized and achieve more. Our app is designed to streamline task management, making it easier to stay productive and focused.</p>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial">
+      <p>"This app helped me stay organized and achieve more in less time!"</p>
+      <strong>- John Doe</strong>
+    </div>
+    <div class="testimonial">
+      <p>"I can't imagine my daily routine without this app. It makes everything easier!"</p>
+      <strong>- Jane Smith</strong>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <p class="question" onclick="toggleAnswer('faq1')">What is this app about?</p>
+    <p id="faq1" class="answer">This app helps you manage your tasks and boost productivity by keeping track of your progress.</p>
+
+    <p class="question" onclick="toggleAnswer('faq2')">How do I get started?</p>
+    <p id="faq2" class="answer">You can sign up for free, and start using the app immediately.</p>
+
+    <p class="question" onclick="toggleAnswer('faq3')">Is the app free?</p>
+    <p id="faq3" class="answer">Yes, the app offers a free plan with premium options for advanced features.</p>
+  </div>
+
+  <!-- Form Section -->
+  <form>
+    <h2>Subscribe to Our Newsletter</h2>
+    <input type="email" placeholder="Enter your email" required>
+    <input type="submit" value="Subscribe">
+  </form>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2024 Our Company. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100069874320036&mibextid=ZbWKwL" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/zyadsobhi12/profilecard/?igsh=MTN6bG9jdWVtOGZn" target="_blank">Instagram</a>
+    </div>
+  </div>
+
+  <script>
+    // FAQ Toggle Functionality
+    function toggleAnswer(faqId) {
+      const answer = document.getElementById(faqId);
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
